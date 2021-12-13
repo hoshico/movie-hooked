@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const Search = (props) => {
   const [searchValue, setSearchValue] = useState("");
-  const handeSeachInputChanges = (e) => {
+  const handelSearchInputChanges = (e) => {
     setSearchValue(e.target.value);
   };
   const resetInputFiled = () => {
@@ -18,7 +18,7 @@ export const Search = (props) => {
     <form className="search">
       <input
         value={searchValue}
-        onChange={handeSeachInputChanges}
+        onChange={handelSearchInputChanges}
         type="text"
       />
       <input onClick={callSearchFunction} type="submit" />
