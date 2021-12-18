@@ -10,7 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [list, setList] = useState([]);
+  
 
   useEffect(() => {
     fetch(MOVIE_API_URL)
@@ -37,12 +37,14 @@ export const App = () => {
         }
       });
   };
-  const onClick = (e) => {
-    const newList = [...list, e.target.textContent];
-    setList(newList);
-    console.log(list);
-  }
   
+  //const [list, setlist] = useState([]);
+  const insertList = () => {
+    console.log("hello");
+    //const newList = [...list, movie.Title];
+    //setlist(newList);
+    //console.log(list);
+  }
 
 
   return (
@@ -57,19 +59,11 @@ export const App = () => {
           <div className="errorMessage">{errorMessage}</div>
         ) : (
           movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} onClick={onClick}/>
+            <Movie key={`${index}-${movie.Title}`} movie={movie} onClick={insertList}/>
           ))
         )}
       </div>
-      <p className="list_title">want to do</p>
-      <ul className="list">
-        {list.map((movie, index) => {
-          return (
-            <li key={index}>{movie}</li>
-          )
-        })}
-      </ul>
-
+  
 
     </div>
   );
