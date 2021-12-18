@@ -112,3 +112,11 @@ input[type="submit"]:hover {
     margin: auto;
   }
 }
+
+.list_title {
+  text-align: left;
+}
+.list {
+  text-align: left;
+  list-style: none;
+}
